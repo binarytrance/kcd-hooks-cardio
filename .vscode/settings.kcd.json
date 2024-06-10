@@ -62,5 +62,11 @@
   "editor.formatOnPaste": false,
   "editor.cursorSmoothCaretAnimation": true,
   "editor.smoothScrolling": true,
-  "php.suggest.basic": false
+  "php.suggest.basic": false,
+  "workbench.colorCustomizations": {
+    "titleBar.activeForeground": "#fff",
+    "titleBar.inactiveForeground": "#ffffffcc",
+    "titleBar.activeBackground": "#FF2C70",
+    "titleBar.inactiveBackground": "#FF2C70CC"
+  }
 }
