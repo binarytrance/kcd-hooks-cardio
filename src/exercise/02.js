@@ -4,11 +4,17 @@
 import * as React from 'react'
 
 function useLocalStorage(entry, initialName) {
+  const getItemFromLS = entry => {
+    // state update happens first
+    return window.localStorage.getItem(entry)
+  }
   const [state, setState] = React.useState(
-    () => window.localStorage.getItem(entry) ?? initialName,
+    () => getItemFromLS(entry) ?? initialName,
   )
 
   React.useEffect(() => {
+    // use effect comes after state update
+    // every time the state changes, we update the localstorage
     window.localStorage.setItem(entry, state)
   }, [state, entry])
 
@@ -39,7 +45,7 @@ function Greeting({initialName = ''}) {
 }
 
 function App() {
-  return <Greeting />
+  return <Greeting initialName="Ganeshan" />
 }
 
 export default App
